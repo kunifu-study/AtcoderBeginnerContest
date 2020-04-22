@@ -1,13 +1,12 @@
-S = list(input())
 ACGT_filter = ['A', 'C', 'G', 'T']
 
-str_length = 0
-str_lengths = []
-for s in S:
+ans = 0
+now = 0
+for s in input():
     if s in ACGT_filter:
-        str_length += 1
+        now += 1
     else:
-        str_lengths.append(str_length)
-        str_length = 0
+        now = 0
+    ans = max(now, ans)
 
-print(max(str_lengths))
+print(ans)
